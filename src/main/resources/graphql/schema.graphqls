@@ -1,0 +1,28 @@
+type Query {
+    # Lee todos los usuarios
+    obtenerUsuarios: [Usuario]
+    # Lee todos los préstamos
+    obtenerPrestamos: [Prestamo]
+}
+
+type Mutation {
+    # Crea un usuario
+    crearUsuario(usuarioInput: String!): String
+    # Crea un préstamo
+    crearPrestamo(prestamoInput: String!): String
+}
+
+type Usuario {
+    idUsuario: ID!
+    nombreCompleto: String!
+    correoElectronico: String!
+    telefono: String
+}
+
+type Prestamo {
+    idPrestamo: Int!
+    idUsuario: String!
+    idLibro: String!
+    fechaPrestamo: String!
+    estadoPrestamo: String!
+}
